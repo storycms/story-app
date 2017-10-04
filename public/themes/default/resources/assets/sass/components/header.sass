@@ -1,0 +1,50 @@
+.metabar
+  position: fixed;
+  display: block;
+  z-index: 500;
+  width: 100%;
+  font-size: 14px;
+  background: #fff;
+  color: rgba(0,0,0,.44);
+  letter-spacing: 0;
+  font-weight: 400;
+  font-style: normal;
+  box-sizing: border-box;
+  top: 0;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.15);
+
+  ul, li, ol
+    padding: 0
+    list-style: none
+    list-style-image: none
+    margin: 0
+
+  .navigation-primary
+    line-height: 65px
+    a
+      line-height: 44px
+      vertical-align: middle
+      img
+        width: 100px !important
+  .navigation-secondary
+    ul
+      border-top: 1px solid rgba(0,0,0,.05) !important
+      li
+        float: left
+        display: inline-block
+        a
+          padding: 15px 20px 18px 0
+          font-size: 14px !important
+          letter-spacing: 0 !important
+          font-weight: 400 !important
+          font-style: normal !important
+          color: rgba(0,0,0,.44)
+          fill: rgba(0,0,0,.44)
+          text-transform: uppercase
+          display: block
+
+          &:hover
+            color: rgba(0,0,0,.6);
+
+          &.active
+            color: rgba(0,0,0,.8)

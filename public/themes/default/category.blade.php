@@ -1,5 +1,3 @@
-@extends('theme::default.layouts.app')
-
 @section('content')
   <div class="container">
     <heading>
@@ -13,3 +11,5 @@
   </div>
 
 @stop
+
+@render()

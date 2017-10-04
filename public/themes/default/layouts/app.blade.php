@@ -3,34 +3,53 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="https://froyo.id/wp-content/themes/froyo-2016-2.0/images/favicon.ico" />
+    <link rel="shortcut icon" href="{{ url('/') }}wp-content/themes/froyo-2016-2.0/images/favicon.ico" />
 
-    <title>Froyo</title>
-    <meta property="og:description" content="">
-    <!-- This site is optimized with the Yoast SEO plugin v5.3 - https://yoast.com/wordpress/plugins/seo/ -->
-    <meta name="description" content="Froyo adalah media yang membahas dunia digital terkait advertising, marketing dan teknologi."/>
-    <link rel="canonical" href="https://froyo.id/" />
-    <link rel="next" href="https://froyo.id/page/2/" />
+    <title>{{ SEO::get('title') }}</title>
+    <meta name="description" content="{{ SEO::get('description') }}"/>
+    <link rel="canonical" href="{{ url('/') }}" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Froyo - Advertising, Marketing, Teknologi" />
-    <meta property="og:description" content="Froyo adalah media yang membahas dunia digital terkait advertising, marketing dan teknologi." />
-    <meta property="og:url" content="https://froyo.id/" />
-    <meta property="og:site_name" content="Froyo" />
+    <meta property="og:title" content="{{ SEO::get('title') }}" />
+    <meta property="og:description" content="{{ SEO::get('description') }}" />
+    <meta property="og:url" content="{{ url('/') }}" />
+    <meta property="og:site_name" content="{{ SEO::get('title') }}" />
 
      @section('css')
-      <link rel="stylesheet" type="text/css" href="{{ Theme::url('/css/bootstrap.min.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ Theme::url('/build/css/app.css') }}">
      @show
 
   </head>
   <body>
 
+    <!-- NAVBAR -->
+    <div class="metabar">
+      <div class="container">
+        <div class="metabar-inner navigation-primary">
+          <nav role="navigation" class="pull-right">
+            <a href="">Search</a>
+          </nav>
+          <a href="/">{{ Configuration::instance()->SITE_TITLE }}</a>
+        </div>
+      </div>
+      <div class="container">
+        <div class="metabar-inner">
+          <nav role="navigation" class="navigation-secondary">
+            <ul class="clearfix">
+              <li><a href="">HOME</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- END NAVBAR -->
+
     @yield('content')
 
     @section('js')
-      <script src="{{ Theme::url('/js/jquery-slim.min.js')}}"></script>
-      <script src="{{ Theme::url('/js/popper.min.js')}}"></script>
-      <script src="{{ Theme::url('/js/bootstrap.min.js')}}"></script>
+      {{--  <script src="{{ Theme::url('/assets/js/jquery-slim.min.js')}}"></script>
+      <script src="{{ Theme::url('/assets/js/popper.min.js')}}"></script>
+      <script src="{{ Theme::url('/assets/js/bootstrap.min.js')}}"></script>  --}}
     @show
   </body>
 </html>
